@@ -2,10 +2,8 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
-import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
-
+import { Button, Container, Nav, Navbar, Dropdown, Image } from 'react-bootstrap';
+// currently have no image for campus-jampus logo, discover page is also not yet made
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { currentUser } = useTracker(() => ({
@@ -13,45 +11,48 @@ const NavBar = () => {
   }), []);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar id="navbar" className="navbar navbar-light" expand="lg">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
-          <h2>meteor-application-template-react</h2>
+          <Nav className="justify-content-start navbar-nav">
+            <Image src="/images/campus-jampus-logo.png" width="200px" />
+          </Nav>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
-            {currentUser ? ([
-              <Nav.Link id="add-stuff-nav" as={NavLink} to="/add" key="add">Add Stuff</Nav.Link>,
-              <Nav.Link id="list-stuff-nav" as={NavLink} to="/list" key="list">List Stuff</Nav.Link>,
-            ]) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
-            ) : ''}
-          </Nav>
+          {currentUser !== '' ? (
+            <Nav id="nav-links" className="justify-content-start mt-4 ms-3">
+              {currentUser ? ([
+                <Nav.Link id="profile-nav" as={NavLink} to="/profile" key="profile">Profile</Nav.Link>,
+                <Nav.Link id="discover-nav" as={NavLink} to="/discover" key="discover">Discover</Nav.Link>,
+              ]) : ''}
+            </Nav>
+          ) : (
+            <Nav />
+          )}
+          <Nav className="m-auto" />
           <Nav className="justify-content-end">
             {currentUser === '' ? (
-              <NavDropdown id="login-dropdown" title="Login">
-                <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
-                  <PersonFill />
-                  Sign
-                  in
-                </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-sign-up" as={NavLink} to="/signup">
-                  <PersonPlusFill />
-                  Sign
-                  up
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Container>
+                <Button id="register-nav" className="btn btn-light" as={NavLink} to="/register">
+                  <strong>Register</strong>
+                </Button>
+                <Button id="signin-nav" className="btn btn-light mx-3" as={NavLink} to="/signin">
+                  <strong>Sign in</strong>
+                </Button>
+              </Container>
             ) : (
-              <NavDropdown id="navbar-current-user" title={currentUser}>
-                <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
-                  <BoxArrowRight />
-                  {' '}
-                  Sign
-                  out
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Dropdown>
+                <Dropdown.Toggle variant="btn btn light" id="navbar-current-user">
+                  {currentUser}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item id="navbar-sign-out" href="/" onClick={() => Meteor.logout()}>
+                    {' '}
+                    Sign out
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             )}
           </Nav>
         </Navbar.Collapse>

@@ -1,9 +1,12 @@
-/* Use Open Sans as the default sans serif font. */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
+/* Use Crete+Round as the default serif font. */
+@import url("https://fonts.googleapis.com/css?family=Crete+Round");
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
+/* GENERAL  */
 
 /* Set up some CSS variables to theme the application. */
 :root {
-  --matr-navbar-bg: #ECECEC;
+  --matr-navbar-bg: #e3f2fd;
   --matr-navbar-bg-rgb: 236, 236, 236;
 }
 
@@ -11,12 +14,19 @@
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  background: fixed center url("/images/piano-background.png");
+  background-size: cover;
+  font-family: 'ABeeZee', sans-serif;
+  color: black;
 }
 
-/* Set the alert background on the signin and signup pages. */
-#signin-page .alert-light, #signup-page .alert-light {
-  --bs-alert-bg: var(--matr-navbar-bg);
+h1, h2, h3, h4, h5 {
+  font-family: "Crete Round", serif;
+  color: black;
+}
+
+#root a {
+  color: #343434;
 }
 
 /* Define custom styles */
@@ -25,4 +35,145 @@ body {
   color: var(--bs-dark);
   padding-top: 10px;
   padding-bottom: 20px;
+}
+
+#root .btn {
+  border-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+#root .btn:hover {
+  border-color: white;
+  background-color: white;
+  color: black;
+}
+
+#root .blue {
+  border-color: #6BACD4;
+  background-color: #6BACD4;
+}
+
+#root .on-white:hover {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+#root input:hover {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+/* NAVIGATION BAR  */
+
+#navbar {
+  background-color: #6BACD4;
+}
+
+#nav-links {
+  border-bottom: white 1px solid;
+  width: 50vw;
+  color: white;
+  font-size: 18px;
+}
+
+#nav-links a {
+  color: white;
+  padding: 0 30px 0 10px;
+}
+
+#nav-links a:hover { color: #343434; }
+
+/* LANDING PAGE */
+
+#landing {
+  overflow: auto;
+}
+
+#landing-center {
+  height: 600px;
+}
+
+#landing h1, #landing h3, #landing h4, #landing p, #landing a, #signin-page h2, #register-page h2 {
+  color: white;
+}
+
+#landing-info {
+  background-color: #6BACD4;
+}
+
+#landing-footer {
+  border-top: white solid 1px;
+}
+
+#landing-github-card {
+  background-color: #212529;
+  text-decoration: none;
+}
+
+#landing-github-card:hover {
+  background-color: #394047;
+}
+
+#landing img {
+  width: 500px;
+  margin-bottom: 25px;
+}
+
+#landing ul {
+  color: white;
+  list-style: none;
+}
+
+/* -------------------------- PAGES -------------------------- */
+
+#root .page-body {
+  min-height: calc(100vh - 80px);
+}
+
+/* -------------------------- PROFILE -------------------------- */
+
+#profile-card, #profile-media {
+  height: 400px;
+}
+
+#profile-media a {
+  color: #343434;
+  text-decoration: none;
+}
+
+#profile-image {
+  max-width: 300px;
+  height: fit-content;
+  max-height: 300px;
+}
+
+/* -------------------------- DISCOVER -------------------------- */
+
+#discover-main, #groups-main {
+  max-width: calc(85vw - 300px);
+}
+
+#discover-main {
+  width: calc(85vw - 300px);
+}
+
+#discover-sidebar, #groups-sidebar {
+  border: 1px solid #343434;
+  border-radius: 5px;
+  width: 300px;
+}
+
+#user-card {
+  width: 400px;
+  min-height: 300px;
+}
+
+#user-image {
+  max-width: 150px;
+  height: fit-content;
+  max-height: 190px;
+}
+
+#user-card-info {
+  width: 200px;
 }
