@@ -1,3 +1,33 @@
-[![ci-meteor-application-template-react](https://github.com/ics-software-engineering/meteor-application-template-react/actions/workflows/ci.yml/badge.svg)](https://github.com/ics-software-engineering/meteor-application-template-react/actions/workflows/ci.yml)
+**Completed**
+Sign In Page
+Sign Out Page
+Create Account Function
+Landing Page 
+Profile Page
+Collection for User Data
 
-For details, please see http://ics-software-engineering.github.io/meteor-application-template-react/
+**Pending**
+Create a nice logo
+Redesign the Sign In/Sign Out Page
+Discover Other Users Page
+Edit Profile Page
+Edit Profile Function
+Create Admin User and Admin Permissions
+
+**Team**
+Kendal Oya 
+  Landing Page
+  Profile Page
+  Will be working on the Discover Page
+  
+Tevin Takata
+  Collection for User Data
+  Create Account Function
+  Will be working on the Admin User and Admin Permissions
+  
+Nick Takamatsu
+  Sign In Page
+  Sign Out Page
+  Will be working on the Edit Profile Page and Edit Profile Function
+  
+
