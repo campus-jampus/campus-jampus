@@ -6,12 +6,12 @@ Landing Page
 Profile Page  
 Collection for User Data  
 
-**New Completions for Assigment 3**
-Discover Page
-Sign In Page Redesigned
-Admin User Added
-Edit Profile Page Added
-When User Sign Out, send back to Landing Page rather then a separate Page
+**New Completions for Assigment 3**  
+Discover Page  
+Sign In Page Redesigned  
+Admin User Added  
+Edit Profile Page Added  
+When User Sign Out, send back to Landing Page rather then a separate Page  
 
 **Pending**  
 Create a nice logo  
