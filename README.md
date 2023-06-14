@@ -17,8 +17,8 @@ When User Sign Out, send back to Landing Page rather then a separate Page
 **Pending**  
 Create a nice logo  
 Edit Profile Function  
-Decide What Functions Admins Should be Able to do
-Need to add sample data for discover page
+Decide Admin Permissions    
+Need to add sample data for discover page  
 
 **Team**  
 Kendal Oya   
