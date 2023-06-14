@@ -5,12 +5,12 @@ import { Accounts } from 'meteor/accounts-base';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, TextField } from 'uniforms-bootstrap5';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
  */
-const SignUp = ({ location }) => {
+const Register = () => {
   const [error, setError] = useState('');
   const [redirectToReferer, setRedirectToRef] = useState(false);
 
@@ -33,42 +33,39 @@ const SignUp = ({ location }) => {
     });
   };
 
-  /* Display the signup form. Redirect to add page after successful registration and login. */
-  const { from } = location?.state || { from: { pathname: '/add' } };
+  /* Display the signup form. Redirect to edit profile page after successful registration and login. */
   // if correct authentication, redirect to from: page instead of signup screen
   if (redirectToReferer) {
-    return <Navigate to={from} />;
+    return (<Navigate to="/registerprofile" />);
   }
   return (
-    <Container id="signup-page" className="py-3">
+    <Container fluid id="register-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center">
+          <Col className="text-center py-4">
             <h2>Register your account</h2>
           </Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-            <Card>
-              <Card.Body>
-                <TextField name="email" placeholder="E-mail address" />
-                <TextField name="password" placeholder="Password" type="password" />
+          <Card>
+            <Card.Body>
+              <AutoForm schema={bridge} onSubmit={data => submit(data)}>
+                <TextField id="register-form-email" name="email" placeholder="E-mail address" />
+                <TextField id="register-form-password" name="password" placeholder="Password" type="password" />
                 <ErrorsField />
-                <SubmitField />
-              </Card.Body>
-            </Card>
-          </AutoForm>
-          <Alert variant="light">
-            Already have an account? Login
-            {' '}
-            <Link to="/signin">here</Link>
-          </Alert>
-          {error === '' ? (
-            ''
-          ) : (
-            <Alert variant="danger">
-              <Alert.Heading>Registration was not successful</Alert.Heading>
-              {error}
-            </Alert>
-          )}
+                <input id="register-form-submit" className="btn btn-light on-white" type="submit" value="Register" />
+              </AutoForm>
+              <Alert variant="light" className="mt-3">
+                <Link to="/signin">Already have an account? Sign in here!</Link>
+              </Alert>
+              {error === '' ? (
+                ''
+              ) : (
+                <Alert variant="danger">
+                  <Alert.Heading>Registration was not successful</Alert.Heading>
+                  {error}
+                </Alert>
+              )}
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
@@ -76,14 +73,14 @@ const SignUp = ({ location }) => {
 };
 
 /* Ensure that the React Router location object is available in case we need to redirect. */
-SignUp.propTypes = {
+Register.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.string,
   }),
 };
 
-SignUp.defaultProps = {
+Register.defaultProps = {
   location: { state: '' },
 };
 
-export default SignUp;
+export default Register;
