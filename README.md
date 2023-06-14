@@ -6,28 +6,31 @@ Landing Page
 Profile Page  
 Collection for User Data  
 
+**New Completions for Assigment 3**
+Discover Page
+Sign In Page Redesigned
+Admin User Added
+Edit Profile Page Added
+When User Sign Out, send back to Landing Page rather then a separate Page
+
 **Pending**  
 Create a nice logo  
-Redesign the Sign In/Sign Out Page  
-Discover Other Users Page  
-Edit Profile Page  
 Edit Profile Function  
-Create Admin User and Admin Permissions  
+Decide What Functions Admins Should be Able to do
+Need to add sample data for discover page
 
 **Team**  
 Kendal Oya   
-  Landing Page  
-  Profile Page  
-  Will be working on the Discover Page  
+  Discover Page  
+  Will be working on the Sample Data
   
 Tevin Takata  
-  Collection for User Data  
-  Create Account Function  
-  Will be working on the Admin User and Admin Permissions  
+  Created the Admin User and Role
+  Will be working on Admin Permissions  
   
 Nick Takamatsu  
-  Sign In Page  
-  Sign Out Page  
-  Will be working on the Edit Profile Page and Edit Profile Function  
+  Redesigned the Sign Out Page
+  Edit Profile Page
+  Will be working on the Edit Profile Function  
   
 
