@@ -11,6 +11,7 @@ Discover Page
 Sign In Page Redesigned  
 Admin User Added  
 Edit Profile Page Added  
+Fixed Register User Page/Functoinality
 When User Sign Out, send back to Landing Page rather then a separate Page  
 
 **Pending**  
@@ -22,15 +23,17 @@ Need to add sample data for discover page
 **Team**  
 Kendal Oya   
   Discover Page  
-  Will be working on the Sample Data
+  Register User Page  
+  Will be working on the Sample Data  
   
 Tevin Takata  
-  Created the Admin User and Role
+  Created the Admin User and Role  
+  Register User Functionality  
   Will be working on Admin Permissions  
   
 Nick Takamatsu  
-  Redesigned the Sign Out Page
-  Edit Profile Page
+  Redesigned the Sign Out Page  
+  Edit Profile Page  
   Will be working on the Edit Profile Function  
   
 
