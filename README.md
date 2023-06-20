@@ -5,35 +5,34 @@ Create Account Function
 Landing Page   
 Profile Page  
 Collection for User Data  
-
-**New Completions for Assigment 3**  
 Discover Page  
 Sign In Page Redesigned  
 Admin User Added  
 Edit Profile Page Added  
-Fixed Register User Page/Functoinality
-When User Sign Out, send back to Landing Page rather then a separate Page  
+Fixed Register User Page/Functionality
+When User Sign Out, send it back to Landing Page rather than a separate Page  
+
+**New Completions for Assignment 4**  
+Admin Role created, given to certain accounts
+Sample Data Added
+Edit Profile Works
 
 **Pending**  
 Create a nice logo  
-Edit Profile Function  
-Decide Admin Permissions    
-Need to add sample data for discover page  
-
+Test Admin Permissions  
+Clean up the UI of Pages  
+Test the website to make sure all functions work  
 **Team**  
 Kendal Oya   
-  Discover Page  
-  Register User Page  
-  Will be working on the Sample Data  
+  Added Sample Data 
+  Will be working on UI Pages + Function testing 
   
 Tevin Takata  
-  Created the Admin User and Role  
-  Register User Functionality  
-  Will be working on Admin Permissions  
+  Added Admin Role and Gave role to a user  
+  Will be working on Admin Functions 
   
 Nick Takamatsu  
-  Redesigned the Sign Out Page  
-  Edit Profile Page  
-  Will be working on the Edit Profile Function  
+  Finished Edit Profile Function  
+  Will be working on creating a logo
   
 
