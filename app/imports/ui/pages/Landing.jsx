@@ -52,7 +52,7 @@ const Landing = () => {
           </Stack>
           <p>
             Campus Jampus is a web app that brings UH musicians together for jam sessions and bands.
-            It helps them find like-minded peers with compatible musical abilities by creating profiles based on musical tastes,              capabilities, and goals.
+            It helps them find like-minded peers with compatible musical abilities by creating profiles based on musical tastes, capabilities, and goals.
             Musicians can connect, schedule meetups, and discover new groups to join or enjoy.
           </p>
           <p>
@@ -69,14 +69,14 @@ const Landing = () => {
             name, what instrument you play, an image to represent you, what your preferred genre is, and your skill
             level. Since Campus Jampus encourages musicians to come together, There are also two options for you to
             check: if you are open to informal jams with other musicians, or if you are seeking a band to join. You are
-            also able to add in external social media links to help others understand what kind of music you create, also making              connecting with one another easier. Make sure the link starts with `https://`!
+            also able to add external social media links to help others understand what kind of music you create, also making connecting with one another easier. Make sure the link starts with `https://`!
             <br /><br />
             Once you hit submit, you will find your profile all set and ready for you! If you wish to change your
             information, simply click the edit button once more and you can edit your information all you want.
           </p>
           <p>
             When you think your profile looks good, head over to the <b>Discover</b> page on the navigation bar. Here you
-            will find all your fellow musicians who also use Campus Jampus. The <b>Discover</b> page gives you all the information            you need about them.
+            will find all your fellow musicians who also use Campus Jampus. The <b>Discover</b> page gives you all the information you need about them.
           </p>
           <p>We appreciate all that use Campus Jampus!</p>
         </Container>
