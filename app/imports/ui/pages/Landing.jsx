@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Button, Col, Container, Row, Nav, Image, Stack } from 'react-bootstrap';
+import { Button, Col, Container, Row, Nav, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 /* A simple static component to render some text for the landing page. */
