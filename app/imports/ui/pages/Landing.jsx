@@ -16,7 +16,7 @@ const Landing = () => {
           <Col className="d-flex flex-column justify-content-center">
             <h1 className="display-2"><strong>Welcome to</strong></h1>
             <Col className="align-middle text-center py-4">
-              <Image src="/images/campus-jampus-logo.png" width="700px" />
+              <Image src="/images/campusjampus.png" width="700px" />
             </Col>
           </Col>
           <Nav className="justify-content-end">

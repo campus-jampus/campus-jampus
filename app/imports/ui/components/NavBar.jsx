@@ -15,7 +15,7 @@ const NavBar = () => {
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           <Nav className="justify-content-start navbar-nav">
-            <Image src="/images/campus-jampus-logo.png" width="200px" />
+            <Image src="/images/campusjampus.png" width="200px" />
           </Nav>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
