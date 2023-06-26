@@ -16,7 +16,7 @@ const Landing = () => {
           <Col className="d-flex flex-column justify-content-center">
             <h1 className="display-2"><strong>Welcome to</strong></h1>
             <Col className="align-middle text-center py-4">
-              <Image src="/images/campusjampus.png" width="700px" />
+              <Image src="/images/campusjampus.jpg" width="700px" />
             </Col>
           </Col>
           <Nav className="justify-content-end">
@@ -45,11 +45,6 @@ const Landing = () => {
       <Container fluid id="landing-info" className="mt-5 .bg-gradient">
         <Container className="py-5">
           <h1>Ready to explore Campus Jampus?</h1>
-          <Stack className="figure float-end ps-4">
-            <Image src="/images/userguide/userGuide6.png" rounded thumbnail />
-            <Image src="/images/userguide/userGuide7.png" rounded thumbnail />
-            <Image src="/images/userguide/userGuide8.png" rounded thumbnail />
-          </Stack>
           <p>
             Campus Jampus is a web app that brings UH musicians together for jam sessions and bands.
             It helps them find like-minded peers with compatible musical abilities by creating profiles based on musical tastes, capabilities, and goals.

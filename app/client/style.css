@@ -14,7 +14,7 @@
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  background: fixed center url("/images/piano-background.png");
+  background: fixed center url("/images/blueback.png");
   background-size: cover;
   font-family: 'ABeeZee', sans-serif;
   color: black;
@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5 {
 #navbar {
   background-color: #6BACD4;
 }
+
 
 #nav-links {
   border-bottom: white 1px solid;

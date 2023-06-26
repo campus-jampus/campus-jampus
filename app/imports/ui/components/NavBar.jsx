@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Button, Container, Nav, Navbar, Dropdown, Image } from 'react-bootstrap';
-// currently have no image for campus-jampus logo, discover page is also not yet made
+
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { currentUser } = useTracker(() => ({
@@ -15,7 +15,7 @@ const NavBar = () => {
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           <Nav className="justify-content-start navbar-nav">
-            <Image src="/images/campusjampus.png" width="200px" />
+            <Image src="/images/campusjampus.jpg" width="200px" />
           </Nav>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
