@@ -35,7 +35,7 @@ Nick Takamatsu
 
 **Installing and Using Program**
 
-Required installations: 
+Required installations:   
 Meteor - https://docs.meteor.com/install.html  
 Node Version 14  
 GitHub Desktop  
@@ -49,15 +49,15 @@ To start, you want to clone the Campus Jampus GitHub repository to your local de
 
 Make sure you already installed Meteor onto your local device, and open up the terminal within your IDE. 
 
-From there, you want to head to the app directory within Campus Jampus by using the command:
+From there, you want to head to the app directory within Campus Jampus by using the command:  
 *cd app*
 
-Once inside the app directory, you can use the command:
+Once inside the app directory, you can use the command:  
 *meteor npm install*
 
 This should install the dependencies for the project.
 
-After running to make sure all the dependencies are installed, you can run this command:
+After running to make sure all the dependencies are installed, you can run this command:  
 *meteor npm run start*
 
 This will start the program and should open it in a new window. From there you can follow the user guide inside of the Wiki to use Campus Jampus!
