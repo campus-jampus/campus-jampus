@@ -11,6 +11,7 @@ Web Application
 Development Tools
 IDE: IntelliJ
 Languages: Javascript, HTML/CSS/ React
+
 B. REQUIREMENTS
 Security and Privacy Requirements: 
 Each user will have a username and password to login into their accounts.
@@ -34,6 +35,7 @@ Some accounts may be dead after a certain period, removing inactive data may be 
 Risk Assessment Plan for Security and Privacy: 
 They are using Privacy Impact Rating to estimate aggregate risk in the overall program. It is also used to see how much work is needed for the project to comply with Microsoft Privacy Guidelines.  Using the same P1, P2, and P3 risk ratings as seen in SDL we can visualize which parts of the project can be associated with higher levels of concern. For clarification, P1 represents High Privacy Risk, P2 represents Moderate Privacy Risk, and P3 is used for Low Privacy Risk. The creation of an account contains P1 Personally Identifiable Information (PII) and must maintain confidentiality when not in use by the program. Regular searches of profiles also contain PII but at a lower level, P2 just shows Names and various information such as instruments played and genres enjoyed. Implementation of the landing page should be P3, as there wouldn’t be any personal information in use while there. 
 From this, we can see that account creation and maintenance will require threat modeling and security reviews to ensure the protection of user PII. For our P1 scenario of account creation, we have a Detailed Privacy Analysis: The PII data stored is email, password, profile image, instrument, genre, and social media links. The justification for this is account creation to put users into our database. We need some sort of discerning information between users beyond genre and instrument, hence why name and profile pictures can be useful. It should be known to users that their confidential information, such as passwords, stays within the system and does not get shared with other users. After creation, users should only be able to access their PII within their profile, and no other users' PII should be accessible. 
+
 C. DESIGN
 Design Requirements:
 Create User Page
@@ -48,8 +50,6 @@ The susceptibility to attack our program can be calculated with an attack surfac
 Since numeric privilege levels tend to be arbitrary or only related to the program at hand we can just mention what groups of access users will have related to the system. The majority of access requests from users will reside in the viewing category. The only time a user should be able to write into the data storage is when creating or deleting an account. Administrators should have the same access as users but also be able to manage the accounts within the system.  
 Vulnerabilities in the system may include access to other users’ profiles which should only show information safe to share. There should be no related access to confidential information. Other weaknesses can appear in errors in code but those should be found before full release. 
 Threat Modeling: 
-	
-
 Spoofing
 When signing in, an attacker may use another user’s credentials to access their account
 Admin accounts may be spoofed as well, leading to unauthorized access to edit profiles
@@ -62,6 +62,7 @@ Denial of Service
 Data flow could be interrupted to or from the accounts database
 Elevation of Privilege
 As stated in spoofing, unauthorized admin access can cause unauthorized privilege.
+
 D. IMPLEMENTATION
 1. Approved tools:
 Software Development Tools Needed for the Program:
@@ -231,7 +232,6 @@ This will start the program and should open it in a new window. From there you c
 Developer Notes
 This project was a very big challenge and required a lot of different specifications.
 Online Repository: https://github.com/campus-jampus/campus-jampus
-Final Project Documentation File:
 Release Version: https://github.com/campus-jampus/campus-jampus/releases/tag/v1.0.0
 Wiki Page: https://github.com/campus-jampus/campus-jampus/wiki
 
