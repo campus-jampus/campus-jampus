@@ -68,7 +68,7 @@ This project was a very big challenge and required a lot of different specificat
 
 Online Repository: https://github.com/campus-jampus/campus-jampus
 
-Final Project Documentation File:
+Final Project Documentation File: https://github.com/campus-jampus/campus-jampus/blob/main/FinalDocumentation
 
 Release Version: https://github.com/campus-jampus/campus-jampus/releases/tag/v1.0.0
 
