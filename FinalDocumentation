@@ -1,0 +1,244 @@
+A. INTRODUCTION
+Team 2  
+Kendal Oya, Tevin Takata, Nicholas Takamatsu
+Campus Jampus
+Allow the students with musical interests at UH Manoa to connect
+Functional Requirements:
+Discover Page
+Profile Page
+Create User
+Web Application
+Development Tools
+IDE: IntelliJ
+Languages: Javascript, HTML/CSS/ React
+B. REQUIREMENTS
+Security and Privacy Requirements: 
+Each user will have a username and password to login into their accounts.
+Users may only log in and edit their account
+Users may view other users, but only the things that the user has put as displayed (Email, Interests, Contact Information, etc.)
+We will be using GitHub for this project. We will have an assignments page where if there is an issue, we can get somebody assigned to fix it.
+Each member can see the page and manually accept a task if there is one posted.
+The main flaw we expect would be account leakage. We must make sure that users cannot access other users' profiles. 
+PII will only be displayed if the user allows it, we need to check that others can not access it.
+Quality Gates (or Bug Bars):
+The ability to either execute arbitrary code or obtain more privilege than authorized
+This is a problem since each user should only be able to access their account. We are planning to have an admin user that can control others' profiles, but that should not be accessible to others.
+An entity (computer, server, user, process) can masquerade as a specific entity (user or computer) of his/her choice
+Someone taking control of the admin account should not be possible.
+Permanent or persistent modification of any user or system data
+Editing others' profiles should not be possible.
+Temporary modification of data in a specific scenario that does not persist after restarting the OS/application
+Editing data in the application should save regardless of restart or not, if it does not save then we need to double-check how data is being stored
+No limit on how long the data is stored
+Some accounts may be dead after a certain period, removing inactive data may be one of the solutions to prevent too much data.
+Risk Assessment Plan for Security and Privacy: 
+They are using Privacy Impact Rating to estimate aggregate risk in the overall program. It is also used to see how much work is needed for the project to comply with Microsoft Privacy Guidelines.  Using the same P1, P2, and P3 risk ratings as seen in SDL we can visualize which parts of the project can be associated with higher levels of concern. For clarification, P1 represents High Privacy Risk, P2 represents Moderate Privacy Risk, and P3 is used for Low Privacy Risk. The creation of an account contains P1 Personally Identifiable Information (PII) and must maintain confidentiality when not in use by the program. Regular searches of profiles also contain PII but at a lower level, P2 just shows Names and various information such as instruments played and genres enjoyed. Implementation of the landing page should be P3, as there wouldn’t be any personal information in use while there. 
+From this, we can see that account creation and maintenance will require threat modeling and security reviews to ensure the protection of user PII. For our P1 scenario of account creation, we have a Detailed Privacy Analysis: The PII data stored is email, password, profile image, instrument, genre, and social media links. The justification for this is account creation to put users into our database. We need some sort of discerning information between users beyond genre and instrument, hence why name and profile pictures can be useful. It should be known to users that their confidential information, such as passwords, stays within the system and does not get shared with other users. After creation, users should only be able to access their PII within their profile, and no other users' PII should be accessible. 
+C. DESIGN
+Design Requirements:
+Create User Page
+User Login
+Edit User Page
+Menu Page/Landing Page
+Sign In/Sign Out
+Explore Page
+	These are the basic features needed to make sure we meet the security and functional specifications. To start, we need a landing page so that the user can view the website and understand where all the functionality is. The landing page will contain buttons to allow the user to either sign in or register for a profile. If the user has already registered, then they can sign in with their relevant email and password. If not, then the user will create an account, inputting all of the data that they would like to have displayed when others view them. There is an explore page where users can reach out to other users and try to connect if they have similar musical interests. On the explore page, they can see the information other users chose to display. There will be an edit profile function where users can change the data they input. Lastly, there is a sign-out function that will sign the user out and redirect to the landing page. 
+Attack Surface Analysis and Reduction: 
+The susceptibility to attack our program can be calculated with an attack surface analysis. Through this, we will be assigning threat levels for each part of our software, specifically software that runs and gives access to data storage. The threat levels for each part will range from 0.1 for low threats to 1.0 for the highest threats. We can gauge the desired components of our final product with an approximate threat rating for each and sum them all up to obtain our attack surface analysis. The overall idea of our web application is to connect UH-affiliated members for musically oriented purposes. This requires a registration process for a profile that gets put into a database. Here is one of the first instances of database access. Another form of access is when users query for users or instruments or genres of music which has to go through our system before putting out information to be viewed. Another instance is when a profile is pulled up, it must access all related information for that user that we find applicable to share.  To reduce the attack surface of our web application, we will minimize the number of features included to avoid the risk of an unnoticed access point in our code. 
+Since numeric privilege levels tend to be arbitrary or only related to the program at hand we can just mention what groups of access users will have related to the system. The majority of access requests from users will reside in the viewing category. The only time a user should be able to write into the data storage is when creating or deleting an account. Administrators should have the same access as users but also be able to manage the accounts within the system.  
+Vulnerabilities in the system may include access to other users’ profiles which should only show information safe to share. There should be no related access to confidential information. Other weaknesses can appear in errors in code but those should be found before full release. 
+Threat Modeling: 
+	
+
+Spoofing
+When signing in, an attacker may use another user’s credentials to access their account
+Admin accounts may be spoofed as well, leading to unauthorized access to edit profiles
+Tampering
+Data flow to accounts database can be tampered with by attack
+Edit profile can be used to edit account information unauthorizedly
+Information Disclosure
+Data across data flow may be accessed by an attacker to gain access to information
+Denial of Service
+Data flow could be interrupted to or from the accounts database
+Elevation of Privilege
+As stated in spoofing, unauthorized admin access can cause unauthorized privilege.
+D. IMPLEMENTATION
+1. Approved tools:
+Software Development Tools Needed for the Program:
+Visual Studio Code(1.56.2) - Code Editing/Development
+IntelliJ IDEA(2021l.1.1) - Code Editing/Development
+MongoDB(4.4.6) - Database Management
+NodeJS(14.17.0) - Server-side Javascript Runtime
+JavaScriptDevelopmentTool(2.6.0) - Debugging and Code Analysis
+ESLint(7.29.0) - Debugging and Code Analysis
+JavaScript(ES6+) - Building User Interfaces
+HTML - Building User Interfaces
+CSS -Building User Interfaces
+ React(17.0.2) - Building User Interfaces
+
+
+
+
+2. Deprecated/Unsafe Functions:
+Deprecated Function
+Suitable Alternative
+trimLeft, trimRight
+trimStart, trimEnd
+getYear(), setYear()
+getFullYear(), setFullYear()
+jQuery.ajax()
+fetch()
+document.write()
+document.createElement()
+MongoDB.findAndModify()
+findOneAndUpdate()/updateOne()
+NodeJS.fs.exists()
+fs.access()
+nowrap
+white-space
+background
+background-image 
+align
+text-align, vertical-align 
+vspace
+padding-top, padding-bottom, padding-left, padding-right
+border
+border-top-width, border-bottom-width, border-left-width, border-right-width
+
+
+
+We can see that there are a fair amount of deprecated functions that we should take caution of. Using some of these functions, the program may still work but there is a lot more risk involved. Security vulnerabilities, poor performance, along with outdated sources are all reasons why we should be using suitable alternatives instead. Using a simple function such as getYear and setYear rather than getFullYear and setFullYear can cause poor performance in the program. We can also see that the deprecated functions in CSS are not as specific as their alternatives, specifying code can help make things more organized.
+
+
+3. Static Analysis:
+For this project, we are using ESLint, which is an open-source static analysis tool to maintain a coding standard across the whole thing. Since multiple people are accessing the code and modifying it, sticking to a coding standard helps mitigate any potential discrepancies in coding. It also does not require the code to be run for it to catch errors. Since we have a file called .eslinrc in our nodes_modules folder which contains all the plugins for ESLint, it is easily usable by all members of the group or anyone that accesses the code.
+
+
+1. Dynamic Analysis: 
+For our group, we have decided to use Chrome DevTools for dynamic analysis. Chrome DevTools helps us inspect, debug, and analyze our application. This is a set of developer tools built into our web browser. There are multiple features to this tool but here are some of the major features used for our project:
+Elements
+Allows us to inspect and modify the HTML and CSS of our webpage in real time
+Console
+Shows the JavaScript console for executing code. It shows us all the errors or warnings when running the website. 
+Makes it easier for us to pinpoint certain errors
+Can also log messages and interact with the page
+Performance
+This allows us to analyze the performance of our application
+Measure CPU and memory usage, look for areas of optimization
+Application
+Managing the applications' local storage
+View/modify data and simulate network conditions
+Audits
+Identify common performance and security issues
+Reduces load times, ensures best practices
+Using this tool in our project allows us to have an easier time testing. We find that when there is an issue crashing the website, we can easily open up the logs to see where things are going wrong. It is also very beneficial to see how well the website runs and if there are more efficient ways to change things. For now, we have mainly used this tool to help us debug and make sure there are no errors within our website. As we add more features, we can use this tool to help us optimize.
+
+
+2. Attack Surface Review: 
+Going back to the Attack Surface reduction, we want to minimize the amount of code that is open to attacks. Thus we are only installing the needed features to run this program. At the same time, we also look for any updates to the current software we plan on implementing. From the previous week, there have been updates put into place for the following:
+Visual Studio Code(Version 1.79) addressed a security issue: JSON schema resulting in CSRF with UNC paths.
+IntelliJ IDEA(2021l.1.3) - multiple bug fixes ranging from Build, Code, Java implementation, UI, etc.  
+MongoDB(4.4.7) - Server fixes which would cause indefinite stalls, minThread values falling to 0, and pipeline fix which would produce a large number of file handles
+NodeJS(14.17.1) - Update of ICU and alignment of source map to stack
+JavaScriptDevelopmentTool(2.6.0) - no change
+ESLint(7.30.0) - Fix of broken links and updates of “use-isnan” and “FlatConfigArray”  
+JavaScript(ES6+) - no change
+HTML - no change
+CSS - no change
+ React(17.0.2) - no change
+
+
+E. VERIFICATION
+Fuzz Testing:
+The first way we tested our system was through our login system. An important feature is to make sure that you are not allowed to log in as an account that is not your own. The easiest way to test this was using an existing accounts email, and entering incorrect passwords to try and log in. This quickly rejected the login attempt and worked as intended. Another way to test our system was to create an account with an already existing email. In our application, we made sure that every email address needs to be unique, meaning that one email can not be linked to two different accounts. Testing this, our application notified the user that this email was already in use with another account if there was an attempt to create an account with the existing email. Having multiple accounts with the same email can have various issues. A big issue would be if a password needs to be changed or an email needs to be sent to verify an account. It would be very hard to determine which account the email is used for. Saying the email is already in use is a good way to verify. However, it has the potential to leak what emails are already in use to random users. The last test we tried to run was trying to access the admin role features as a regular user. As of right now, the admin role does not have much significance outside of being able to see the roles of every user. When on the Discover page, an admin can see what everyone's role is. As we signed into a user account, we were able to tell that we could not see the roles displayed. To get access to the admin role, you would have to be logged into an admin account. For now, the only way to receive the role is by going into the backend side and manually adding the role. This works well because we know that a user can not accidentally receive an admin role and potentially mess things up on the website later on.
+
+
+Static Analysis Review
+We have ESLint automatically running on all of our files. It will instantly show us if we made a formatting error or coding error and will show the errors on GitHub if it is not resolved. This makes it so that we must fix all of the ESLint errors before committing anything. Throughout this project, ESLint has shown lots of errors and warnings. The most common error shown would be the formatting error. ESLint makes it so that all the code is formatted correctly to ensure consistency throughout the project. Things such as a leading space or wrong indentation cause the file to have a big error. After fixing all of the formatting errors within the files, we were still left with multiple warnings throughout our application. Most of the errors were solved by installing modules such as Meteor. Other common warnings were not being able to access specific variables within certain files which was an easy fix. Using ESLint made it very easy to identify what was being used and what was not being used. If we had an import statement that was not being used anywhere, then ESLint would provide us with a notification to delete it or use it somewhere within the file. This helped us only include what we needed and nothing more.
+
+
+
+
+
+
+Dynamic Review
+Running the program results in partial functionality of the overall product. From what we have currently implemented, we can already see the desired components in action. Some of the base pages are already in a functional state such as sign in/out, profile page, and discover page. Throughout the development cycle, more of the project’s pages will be added to this list of currently functioning components. There are some portions of the code that are currently unfinished and will not give correct output such as some UI features, role accessibility, and profile functions. Using Chrome DevTools, allows us to view console logs while we run the website. There have not been too many instances in which this was necessary, since errors usually did not crash the website, but rather, data or information may have not been stored correctly. In this case, using the Chrome DevTools console was pretty helpful. On occasion, profile pages would not load correctly, so it was very helpful to update the UI in real-time. Overall, there have not been too many issues in using Chrome DevTools.
+
+
+F. RELEASE REPORT
+Incident Response Plan
+Kendal
+Escalation Manager
+Leads team through the high-severity events
+Identify immediate issues throughout the program
+Focus on the positives and negatives of the team's actions
+Public Relations Representative
+Promotes project and organization
+Plans public relations/community interaction
+Nick
+Legal Representative
+Makes sure the project follows legal implications
+Will handle any issues regarding legal issues
+Prevents legal issues
+Tevin
+Security Engineer
+Handles the security issues within the project
+Advises changes throughout the project to make it more secure
+Optimizes security features
+CONTACT EMAIL: campusjampus@gmail.com
+If an issue arises within the project, whether it be through a user report or a team member discovery, the escalation manager can see what is further needed to do. From there, the severity of the issue will determine what type of action we will take. The escalation manager can determine what team members will handle which parts of the problem. If the issue is bad enough that the users of the app need to be known, the public relations representative will send out a notification. The legal representative is responsible for handling all legal actions/problems. The security engineer will look into the problem and try to find a solution at an optimal time. The public relations representative will send another notification stating that the problem has been solved. After the issue has been resolved, we will discuss how the issue started and what sort of things caused it. After we will make the appropriate changes to prevent similar future issues. If an issue arises within our application, it is most important that everyone does their part so the issue gets completely resolved as fast as possible.
+
+
+Final Security Review (FSR)
+(Threat Model, Static Analysis, Dynamic Analysis, quality gate/bug bars)
+FSR Process:
+FSR Grading: 
+Certified Release and Archive Report  
+Current release for CampusJampus:
+Campus Jampus Version 1.0.0
+Summary of Features
+Secure Login system
+Secure admin account
+Secure user account
+Easy way to find other students of similar musical interests
+Easy edit profile functionality
+Filter users by instrument
+
+
+Future Development Plans
+Implement a user messaging system
+Make application fit on mobile systems
+
+
+Installing and Using Program
+Required installations:
+Meteor - https://docs.meteor.com/install.html
+Node Version 14
+GitHub Desktop
+IDE(Ex: IntelliJ)
+How to Use Campus Jampus
+As of now, Campus Jampus does not have its own domain, as it can only be used locally. Using the application will require the use of Meteor on your local device.
+To start, you want to clone the Campus Jampus GitHub repository to your local device. From there, you want to open it in the IDE of your choice.
+Make sure you already installed Meteor onto your local device, and open up the terminal within your IDE.
+From there, you want to head to the app directory within Campus Jampus by using the command:
+cd app
+Once inside the app directory, you can use the command:
+meteor npm install
+This should install the dependencies for the project.
+After running to make sure all the dependencies are installed, you can run this command:
+meteor npm run start
+This will start the program and should open it in a new window. From there you can follow the user guide inside of the Wiki to use Campus Jampus!
+Developer Notes
+This project was a very big challenge and required a lot of different specifications.
+Online Repository: https://github.com/campus-jampus/campus-jampus
+Final Project Documentation File:
+Release Version: https://github.com/campus-jampus/campus-jampus/releases/tag/v1.0.0
+Wiki Page: https://github.com/campus-jampus/campus-jampus/wiki
+
+
+
+
+
+
+
+
