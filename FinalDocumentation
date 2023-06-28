@@ -192,7 +192,13 @@ If an issue arises within the project, whether it be through a user report or a 
 
 Final Security Review (FSR)
 (Threat Model, Static Analysis, Dynamic Analysis, quality gate/bug bars)
-FSR Process:
+The threat model hasn’t gone through any significant change if any. By performing static analysis, ESLint does not show any errors. 
+By performing dynamic analysis, using Chrome DevTools helped us alleviate any errors that were encountered.
+
+Security milestones during development such as bug reviews and threat model reviews were reached during middle to late stages of Campus Jampus’ development. Due to the speed at which we developed this product the reviews took place at a weekly rate starting from week 3. Since this project consisted of a three man team we conducted a joint review of the concerns posed in the FSR process. As mentioned above the use of the security tools helped identify any outlying issues within the code, while deliberation between the members was used to find any lapse in the program where unseen errors could occur. 
+
+In testing the website, and testing the potential ways in which users could use the app, we have reached the conclusion that we will grade the website passed FSR. The website does not allow two accounts with the same email address, and does not allow a user account administrator access. 
+
 FSR Grading: 
 Certified Release and Archive Report  
 Current release for CampusJampus:
