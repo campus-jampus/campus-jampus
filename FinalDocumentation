@@ -199,7 +199,6 @@ Security milestones during development such as bug reviews and threat model revi
 
 In testing the website, and testing the potential ways in which users could use the app, we have reached the conclusion that we will grade the website passed FSR. The website does not allow two accounts with the same email address, and does not allow a user account administrator access. 
 
-FSR Grading: 
 Certified Release and Archive Report  
 Current release for CampusJampus:
 Campus Jampus Version 1.0.0
